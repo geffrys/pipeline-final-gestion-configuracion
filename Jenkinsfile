@@ -4,7 +4,7 @@ pipeline{
 
     parameters {
         string(name: 'GITHUB_URL', defaultValue: 'https://github.com/geffrys/proyecto-web-final-gestion-configuracion', description: 'URL del repositorio de GitHub')
-        string(name: 'EMAIL', defaultValue: 'geffry.ospina@gmail.com', description: 'Correo electrónico del usuario de GitHub')
+        string(name: 'EMAIL', defaultValue: 'geffry.ospina@gmail.com', description: 'Correo electrónico para enviar notificaciones')
     }
 
     tools {
@@ -42,6 +42,19 @@ pipeline{
                     mvn clean package
                 '''
             }
+        }
+    }
+
+    post {
+        success {
+            mail to: "${params.EMAIL}",
+                subject: "Proyecto compilado exitosamente",
+                body: "El proyecto se ha compilado exitosamente"
+        }
+        failure {
+            mail to: "${params.EMAIL}",
+                subject: "Error al compilar el proyecto",
+                body: "El proyecto no se ha compilado exitosamente"
         }
     }
 }
