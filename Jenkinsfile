@@ -43,6 +43,14 @@ pipeline{
                 '''
             }
         }
+        stage('copiar archivo war') {
+            steps {
+                bat '''
+                    copy target/*.war C:\Users\geffr\Documents\GitHub\FINAL-pruebas-gestion-configuracion\FINAL-tomcat-QA\webapps\Final
+                    dir C:\Users\geffr\Documents\GitHub\FINAL-pruebas-gestion-configuracion\FINAL-tomcat-QA\webapps\Final
+                '''
+            }
+        }
     }
 
     post {
