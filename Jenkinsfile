@@ -34,7 +34,10 @@ pipeline{
         }
         stage('Maven build') {
             steps {
-                bat 'mvn clean package'
+                bat ''''
+                    cd proyecto-web-final-gestion-configuracion
+                    mvn clean package
+                '''
             }
         }
     }
