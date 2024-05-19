@@ -1,22 +1,26 @@
-pipeline {
-    agent any
-    
+
+pipeline{
+    agent any;
+
+    parameters {
+        string(name: 'GITHUB_URL', defaultValue: 'https://github.com/geffrys/proyecto-web-final-gestion-configuracion', description: 'URL del repositorio de GitHub')
+        string(name: 'EMAIL', defaultValue: 'geffry.ospina@gmail.com', description: 'Correo electrónico del usuario de GitHub')
+    }
+
+    tools {
+        maven 'maven 3.9.6'
+    }
+
     stages {
-        
+        stage('Clone repository') {
+            steps {
+                sh "git clone ${params.GITHUB_URL}"
+            }
+        }
         stage('Build') {
             steps {
-                // Configurar Maven
-                tool 'Maven'
-                // Ejecutar el comando de construcción de Maven
                 sh 'mvn clean install'
             }
         }
-        stage('Send mail'){
-            steps{
-                mail to: 'geffry.ospina@gmial.com'
-                subject: 'Build Success'
-                body: 'The build was successful'
-        }
-        
     }
 }
