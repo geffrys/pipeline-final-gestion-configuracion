@@ -46,9 +46,9 @@ pipeline{
         stage('copiar archivo war') {
             steps {
                 bat '''
-                    cd C:/ProgramData/Jenkins/.jenkins/workspace/ProyectoFinalPorJenkinsFile/proyecto-web-final-gestion-configuracion/target
-                    copy *.war C:/Users/geffr/Documents/GitHub/FINAL-pruebas-gestion-configuracion/FINAL-tomcat-QA/webapps/Final
-                    dir C:/Users/geffr/Documents/GitHub/FINAL-pruebas-gestion-configuracion/FINAL-tomcat-QA/webapps/Final
+                    cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ProyectoFinalPorJenkinsFile\\proyecto-web-final-gestion-configuracion\\target
+                    copy *.war C:\\Users\\geffr\\Documents\\GitHub\\FINAL-pruebas-gestion-configuracion\\FINAL-tomcat-QA\\webapps\\Final
+                    dir C:\\Users\\geffr\\Documents\\GitHub\\FINAL-pruebas-gestion-configuracion\\FINAL-tomcat-QA\\webapps\\Final
                 '''
             }
         }
