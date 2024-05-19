@@ -23,7 +23,9 @@ pipeline{
                     echo Limpiando el workspace...
                     mkdir temp_dir
                     move * temp_dir
+                    dir /temp_dir
                     rmdir /s /q temp_dir
+                    dir
                 '''
             }
         }
