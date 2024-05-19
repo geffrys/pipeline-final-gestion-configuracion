@@ -49,12 +49,12 @@ pipeline{
         success {
             mail to: "${params.EMAIL}",
                 subject: "Proyecto compilado exitosamente",
-                body: "El proyecto se ha compilado exitosamente"
+                body: "Proyecto enviado a QA para pruebas"
         }
         failure {
             mail to: "${params.EMAIL}",
                 subject: "Error al compilar el proyecto",
-                body: "El proyecto no se ha compilado exitosamente"
+                body: "El proyecto no se ha podido compilar correctamente para enviar a QA"
         }
     }
 }
