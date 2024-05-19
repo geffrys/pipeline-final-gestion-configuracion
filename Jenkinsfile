@@ -25,7 +25,7 @@ pipeline{
                     move * temp_dir
                     dir temp_dir
                     rmdir /s /q temp_dir
-                    rmdir proyecto-web-final-gestion-configuracion
+                    rmdir /s /q proyecto-web-final-gestion-configuracion
                     dir
                 '''
             }
