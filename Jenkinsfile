@@ -49,7 +49,7 @@ pipeline{
                     cd target
                     copy *.war C:/Users/geffr/Documents/GitHub/FINAL-pruebas-gestion-configuracion/FINAL-tomcat-QA/webapps/Final
                     dir C:/Users/geffr/Documents/GitHub/FINAL-pruebas-gestion-configuracion/FINAL-tomcat-QA/webapps/Final
-                ''/
+                '''
             }
         }
     }
