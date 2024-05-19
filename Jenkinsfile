@@ -14,7 +14,11 @@ pipeline{
     stages {
         stage('Limpiar workspace') {
             steps {
-                bat 'del /s /q *'
+                bat '''
+                    if exist . (
+                        rd /s /q .
+                    )
+                '''
             }
         }
         stage('Clonar repository') {
