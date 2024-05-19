@@ -14,12 +14,12 @@ pipeline{
     stages {
         stage('Clone repository') {
             steps {
-                sh "git clone ${params.GITHUB_URL}"
+                bat "git clone ${params.GITHUB_URL}"
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
     }
