@@ -12,14 +12,19 @@ pipeline{
     }
 
     stages {
-        stage('Clone repository') {
+        stage('Limpiar workspace') {
+            steps {
+                bat 'del /s /q *'
+            }
+        }
+        stage('Clonar repository') {
             steps {
                 bat "git clone ${params.GITHUB_URL}"
             }
         }
-        stage('Build') {
+        stage('Maven build') {
             steps {
-                bat 'mvn clean install'
+                bat 'mvn clean package'
             }
         }
     }
