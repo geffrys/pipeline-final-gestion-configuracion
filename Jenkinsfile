@@ -12,12 +12,18 @@ pipeline{
     }
 
     stages {
+        stage('Listar archivos del workspace actual') {
+            steps {
+                bat 'dir'
+            }
+        }
         stage('Limpiar workspace') {
             steps {
                 bat '''
-                    if exist . (
-                        rd /s /q .
-                    )
+                    echo Limpiando el workspace...
+                    mkdir temp_dir
+                    move * temp_dir
+                    rmdir /s /q temp_dir
                 '''
             }
         }
