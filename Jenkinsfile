@@ -47,8 +47,7 @@ pipeline{
             steps {
                 bat '''
                     cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ProyectoFinalPorJenkinsFile\\proyecto-web-final-gestion-configuracion\\target
-                    copy *.war C:\\apache-tomcat-10.1.24\\webapps\\FINAL_PDN
-                    dir C:\\Users\\geffr\\Documents\\GitHub\\FINAL-pruebas-gestion-configuracion\\FINAL-tomcat-QA\\webapps\\Final
+                    copy *.war C:\\apache-tomcat-10.1.24\\webapps\\FINAL_QA
                 '''
             }
         }
