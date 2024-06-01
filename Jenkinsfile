@@ -47,7 +47,8 @@ pipeline{
             steps {
                 bat '''
                     cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\ProyectoFinalPorJenkinsFile\\proyecto-web-final-gestion-configuracion\\target
-                    copy *.war C:\\apache-tomcat-10.1.24\\webapps\\QA.war
+                    ren *.war QA.war
+                    copy *.war C:\\apache-tomcat-10.1.24\\webapps\\
                 '''
             }
         }
