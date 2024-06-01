@@ -59,6 +59,7 @@ pipeline{
             mail to: "${params.EMAIL}",
                 subject: "Proyecto compilado exitosamente",
                 body: "Proyecto enviado a QA para pruebas"
+            build job: 'ContinuosDeploymentPDN', wait: true
         }
         failure {
             mail to: "${params.EMAIL}",
